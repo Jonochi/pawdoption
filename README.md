@@ -15,7 +15,7 @@ SO THAT and apply to adopt them
 - [License](#license)
 
 ## Deployed
-https://pawdoption1.herokuapp.com/dogs
+https://paw-doption.herokuapp.com/
 ![image](https://github.com/evacamino/Eva-Portfolio/assets/118796859/3a14223b-61c7-42c3-9458-7e95ba4f1a98)
 
 

@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lizcas01/pawdoption.git"
+    "url": "git+https://github.com/jonochi/pawdoption.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lizcas01/pawdoption/issues"
+    "url": "https://github.com/jonochi/pawdoption/issues"
   },
-  "homepage": "https://github.com/lizcas01/pawdoption#readme",
+  "homepage": "https://github.com/jonochi/pawdoption#readme",
   "devDependencies": {
     "concurrently": "^8.0.1"
   },
