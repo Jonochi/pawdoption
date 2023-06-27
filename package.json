@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/jonochi/pawdoption/issues"
   },
-  "homepage": "https://github.com/jonochi/pawdoption#readme",
+  "homepage": "https://paw-doption.herokuapp.com/",
   "devDependencies": {
     "concurrently": "^8.0.1"
   },
