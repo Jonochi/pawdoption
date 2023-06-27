@@ -4,6 +4,7 @@ const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
+const uri = process.env.MONGODB_URI;
 const stripe = require('stripe')('sk_test_51N9HY7Ggv41H9K2AMU9Ssooe1aPIPmVh9gQQyZ3igQdpFkDcIfUoXQC6jCAXam5KJRCcppwxeRyvINyPj2mAbUKk00ZRgRNR7U')
 
 const YOUR_DOMAIN = process.env.YOUR_DOMAIN || 'http://localhost:3000'
@@ -40,19 +41,24 @@ app.post('/create-checkout-session', async (req, res) => {
   res.redirect(303, session.url);
 });
 
+mongoose
+  .connect(uri, { useUnifiedTopology: true, useNewUrlParser: true })
+  .then(() => console.log('MongoDB connected!'))
+  .catch(err => console.log('Error:- ' + err));
+
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {
   await server.start();
   server.applyMiddleware({ app });
-  
+
   db.once('open', () => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     })
   })
-  };
-  
+};
+
 // Call the async function to start the server
-  startApolloServer();
- 
+startApolloServer();
+
